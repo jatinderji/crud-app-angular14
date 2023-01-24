@@ -1,0 +1,20 @@
+
+<ul ngbNav #nav="ngbNav" class="nav-tabs" activeId="allUsersTab">
+
+    <li ngbNavItem="registerUserTab">
+        <a ngbNavLink>{{saveOrUpdate}} User</a>
+        <ng-template ngbNavContent>
+            <app-add-user (addUserChildEvent)="userSavedOrUpdatedEvent($event)"></app-add-user>
+        </ng-template>
+    </li>
+
+    <li ngbNavItem="allUsersTab">
+        <a ngbNavLink>All Users</a>
+        <ng-template ngbNavContent>
+            <app-all-users (editUserChildEvent)="setSaveOrUpdateEvent($event)"></app-all-users>
+        </ng-template>
+      
+    </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

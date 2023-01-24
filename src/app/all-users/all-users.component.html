@@ -1,0 +1,36 @@
+<div class="card mx-auto" style="width: 90%">
+    <div class="card col">
+        <div class="card-header">
+            All Users
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Sr.No.</th>
+                        <th>Title</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>DOB</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{user.title}}</td>
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.lastName}}</td>
+                        <td>{{user.dob}}</td>
+                        <td>{{user.email}}</td>
+                        <td>
+                            <p class="fa fa-edit me-2" style="color: green;" (click)="editUser(user)"></p>
+                            <p class="fa fa-trash" style="color: red;" (click)="deleteUser(user.id)"></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
